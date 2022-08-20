@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import BorderImage from "./Images/border_image.jpg";
+import btnSong from "./Images/new_pop_up1.mp3";
 import { projectContext } from "./ContextManager";
 function BuyTicketModalForm() {
     const usingContext = useContext(projectContext);
     return (<>
-        <button className="buyTicketBtn" data-bs-toggle="modal" data-bs-target="#staticBackdropzBuyTicket" onClick={usingContext.TicketClick} style={{display:"inline-block"}}>Buy Ticket</button>
+        <button className="buyTicketBtn" data-bs-toggle="modal" data-bs-target="#staticBackdropzBuyTicket" onClick={usingContext.TicketClick} style={{ display: "inline-block" }}>Buy Ticket</button>
         <div className="modal fade" id="staticBackdropzBuyTicket" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content">
@@ -47,16 +48,21 @@ function NumbersModalForm() {
                         <center>
                             <img src={BorderImage} alt="Loading" className="borderimg" />
                         </center>
+                        <audio id="btnSound">
+                            <source src={btnSong} type="audio/mpeg"></source>
+                        </audio>
                         <div className="row  row-numbers">
                             {usingContext.numberDetails.length === 0 ? "" : usingContext.numberDetails.map((val, index) => {
                                 return (
                                     <div className="col-lg-2 col-md-3 col-sm-4 col-5 col-numbers" key={index}>
-                                        <button className="numberBtn" style={{ background: `${val.clicked ? "#c0bcbc" : "transparent"}`,
-                                        color: `${val.clicked ? "black" : "white"}`
-                                         }} key={index} onClick={() => { return usingContext.clickButton(val.id) }}>
+                                        <button className="numberBtn" style={{
+                                            background: `${val.clicked ? "#c0bcbc" : "transparent"}`,
+                                            color: `${val.clicked ? "black" : "white"}`
+                                        }} key={index} onClick={() => { return usingContext.clickButton(val.id) }}>
                                             {val.clicked ? val.value : <span className="material-symbols-outlined">
                                                 lock
-                                            </span>}</button>
+                                            </span>}
+                                        </button>
                                     </div>);
                             })}
                         </div>
@@ -64,7 +70,7 @@ function NumbersModalForm() {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     </>)
 }
 export default BuyTicketModalForm;

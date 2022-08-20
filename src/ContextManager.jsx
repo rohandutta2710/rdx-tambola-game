@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 const projectContext = createContext();
-const buttonClickSound = new Audio("./Images/new_pop_up1.mp3");
 function ContextManager(props) {
+
     const [ticketDetails, setTicketDetails] = useState([]);
     const [numberDetails, setNumberDetails] = useState([]);
     const TicketClick = () => {
@@ -27,11 +27,12 @@ function ContextManager(props) {
         }
     }
     const clickButton = (uniqueID) => {
+        document.getElementById("btnSound").play();
         let virtualarray = numberDetails, clickedIndex = -1;
         for (let i = 0; i < virtualarray.length; i++) {
             if (virtualarray[i]["id"] === uniqueID) {
                 clickedIndex = i;
-                buttonClickSound.play();
+                break;
             }
         }
         virtualarray[clickedIndex]["clicked"] = true;
