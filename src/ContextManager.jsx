@@ -1,13 +1,7 @@
 import { createContext, useState } from "react";
 const projectContext = createContext();
-<<<<<<< HEAD
 function ContextManager(props) {
 
-=======
-
-function ContextManager(props) {
-    var buttonClickSound = new Audio("./Images/new_pop_up1.mp3");
->>>>>>> 6c30f0d249d9ed1d4ce24bc30a92ba9ca1d823ae
     const [ticketDetails, setTicketDetails] = useState([]);
     const [numberDetails, setNumberDetails] = useState([]);
     const TicketClick = () => {
