@@ -4,7 +4,7 @@ import { projectContext } from "./ContextManager";
 function BuyTicketModalForm() {
     const usingContext = useContext(projectContext);
     return (<>
-        <button className="buyTicketBtn" data-bs-toggle="modal" data-bs-target="#staticBackdropzBuyTicket" onClick={usingContext.TicketClick} style={{display:"none"}}>Buy Ticket</button>
+        <button className="buyTicketBtn" data-bs-toggle="modal" data-bs-target="#staticBackdropzBuyTicket" onClick={usingContext.TicketClick} style={{display:"inline-block"}}>Buy Ticket</button>
         <div className="modal fade" id="staticBackdropzBuyTicket" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content">
