@@ -35,7 +35,7 @@ function BuyTicketModalForm() {
 function NumbersModalForm() {
     const usingContext = useContext(projectContext);
     return (<>
-        <button className="buyTicketBtn" data-bs-toggle="modal" data-bs-target="#staticBackdropNumberCut" onClick={usingContext.numberCutFill} style={{ display: "block" }} >Numbers</button>
+        <button className="buyTicketBtn" data-bs-toggle="modal" data-bs-target="#staticBackdropNumberCut" onClick={usingContext.numberCutFill} style={{ display: "none" }} >Numbers</button>
 
         <div className="modal fade" id="staticBackdropNumberCut" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered modal-lg">
